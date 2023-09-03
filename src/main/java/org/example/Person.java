@@ -1,6 +1,6 @@
 package org.example;
 
-public class Person {
+public abstract class Person {
 
     private String name;
     private int age;
@@ -18,6 +18,7 @@ public class Person {
         this.money = money;
 
     }
+
     public void printInfo() {
         System.out.println("Имя :" + name);
         System.out.println("Возраст :" + age);
@@ -66,13 +67,15 @@ public class Person {
     }
 
     public void goToWork() {
-        if (age < 18 || age >=70) {
+        if (age < 18 || age >= 70) {
             System.out.println("Гоняю балду или сижу с газеткой у камина");
         } else System.out.println("Вынужден пахать аки бобик на бляго Дойчеланд");
-
-
     }
+
     public void die() {
         System.out.println("Человек погиб");
     }
+
+    public abstract void die(int years);
 }
+
