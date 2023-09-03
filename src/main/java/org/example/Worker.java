@@ -1,6 +1,6 @@
 package org.example;
 
-public class Worker extends Person{
+public class Worker extends Person implements AbleToCalculatePension {
 
     private int minSalary;
     private int maxSalary;
@@ -64,4 +64,12 @@ public class Worker extends Person{
         return result;
     }
 
+    @Override
+    public double calculatePension() {
+        return CalculatorUtils.calculateAverage((int) minSalary,(int) maxSalary) * 0.25;
+
+//        double averageSalary = CalculatorUtils.calculateAverage(maxSalary, minSalary);
+//        double pension = 0.25 * averageSalary;
+//        return pension;
+    }
 }
